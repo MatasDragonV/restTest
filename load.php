@@ -16,7 +16,8 @@ foreach ($array['result'] AS $owner) {
 $file = file('file.csv');
 $CSVarray=[];
 foreach ($file as $line) {
-	$CSVarray[] = str_getcsv(mb_convert_encoding($line,'UTF-8','windows-1251'),';');
+	//$CSVarray[] = str_getcsv(mb_convert_encoding($line,'UTF-8','windows-1251'),';');
+	$CSVarray[] = str_getcsv($line,';');
 }
 foreach ($CSVarray as $key=>$value) {
 	if ($key>0) {
